@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "stipple-diagrams"
+dynamic = ["version"]
+description = "A text language for technical diagrams with SVG shading."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT AND OFL-1.1"
+license-files = ["LICENSE", "src/stipple/assets/OFL.txt"]
+authors = [{name = "Dylan McCoy"}]
+
+[project.scripts]
+stipple = "stipple.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/stipple"]
+
+[tool.hatch.version]
+path = "src/stipple/__init__.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/src/stipple",
+    "/README.md",
+    "/LICENSE",
+    "/pyproject.toml",
+]

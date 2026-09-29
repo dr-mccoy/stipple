@@ -1,0 +1,3 @@
+# Preserve the upstream font license
+src/stipple/assets/OFL.txt -whitespace
+src/stipple/assets/metrics.json linguist-generated=true
